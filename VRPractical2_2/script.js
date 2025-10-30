@@ -63,24 +63,5 @@ window.addEventListener("DOMContentLoaded", function() {
     dude_loop();
 });
 
-window.addEventListener("DOMContentLoaded", function() {
-    const scene = document.querySelector("a-scene");
-    const sun = document.querySelector("#sun");
 
-    sun.opacity = 0;  
-    sun.dopacity = 0.01; 
 
-    sun.setAttribute("material", "transparent: true; opacity: 0");
-
-    function sun_loop() {
-       if (sun.opacity < 1) {
-            sun.opacity += sun.dopacity;
-            if (sun.opacity > 1) sun.opacity = 1; 
-            sun.setAttribute("material", `transparent: true; opacity: ${sun.opacity}`);
-        }
-
-        window.requestAnimationFrame(sun_loop);
-    }
-
-    sun_loop();
-});
