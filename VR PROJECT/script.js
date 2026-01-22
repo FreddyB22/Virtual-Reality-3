@@ -56,9 +56,16 @@ let maze = [
 ];
 
 
-let scene;
+let scene , surpriseBox;
 
 window.addEventListener("DOMContentLoaded",function() {
+   
+  surpriseBox = document.getElementById("surpriseBox");
+  surpriseBox.addEventListener("click", function() {
+    carousel.rotate=true;
+    surpriseBox.setAttribute("color", "green");
+  });
+  
   scene = document.querySelector("a-scene");
   for(let r = 0; r < maze.length; r++){
 
@@ -83,7 +90,7 @@ window.addEventListener("DOMContentLoaded",function() {
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   for(let r = 0; r < maze.length; r++){
-   
+  
   }
-
+  
 })
