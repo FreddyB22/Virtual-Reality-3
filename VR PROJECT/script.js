@@ -56,9 +56,12 @@ let maze = [
 ];
 
 
-let scene , surpriseBox;
+let scene , surpriseBox, t = 200;
 
 window.addEventListener("DOMContentLoaded",function() {
+  time = document.getElementById("time");
+  this.setTimeout(countdown, 1000);
+
    
   surpriseBox = document.getElementById("surpriseBox");
   surpriseBox.addEventListener("click", function() {
@@ -84,6 +87,11 @@ window.addEventListener("DOMContentLoaded",function() {
 }) 
 
 
+function countdown(){
+  time.setAttribute("value",`Time: ${t}`);
+  t--;
+  setTimeout(countdown,1000);
+}
 
 
 
