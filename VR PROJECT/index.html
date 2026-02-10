@@ -1,24 +1,28 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
     <script src="script.js"></script>
     <script src="wall.js"></script>
+    <script src="kinema.js"></script>
 
   </head>
   <body>
-    <a-scene>
+    <a-scene physics="debug: false">
       <a-assets>
-      <img src= id="wall"></src>
+
+
   
       </a-assets>
-      <a-plane  position="150 0 100" rotation="-90 0 0" width="304" height="204" color="#000000"></a-plane>
+      <a-box static-body position="150 -0.5 100" width="304" height="1" depth="204" color="#000000"></a-box>
      
       <a-box id="surpriseBox" position="200 0.45 0" scale="0.5 10 0.5" color = "red"></a-box>
       <a-sky repeat="10 10"></a-sky>
-      <a-camera wasd-controls="acceleration: 100; fly: true" position=" 5 5.5 5" >
+      
+      <a-camera wasd-controls="acceleration: 100" kinema-body="radius: 0.5" position=" 5 7 5" kinema-body="radius: 0.8">
         <a-cursor>
           <a-text id="time" position="-3.2 1.5 -1" value="time: " color="black"></a-text>
         </a-cursor>
       </a-camera>
-      
+    </a-scene>
 </html>

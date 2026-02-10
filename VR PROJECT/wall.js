@@ -5,14 +5,24 @@ class Wall{
     this.z = z;
     
     this.obj = document.createElement("a-entity");
+    this.obj.setAttribute("position", {x:x, y:y, z:z});
+    this.obj.setAttribute("static-body","");
+    
     let wall = document.createElement("a-box");
-    wall.setAttribute("src","wall.png");
-    wall.setAttribute("repeat","0.5 2");
-    wall.setAttribute("scale","4, 10, 4")
-    wall.setAttribute("position",{x:x,y:y,z:z});
+    wall.setAttribute("width", "4");
+    wall.setAttribute("height", "10");
+    wall.setAttribute("depth", "4");
+    wall.setAttribute("position", "0 0 0");
+    wall.setAttribute("material", "repeat: 0.5 2");
+    wall.setAttribute("color", "white");
+    
     let baseboard = document.createElement("a-box");
-    baseboard.setAttribute("scale","4.1, 0.2, 4.1");
-    baseboard.setAttribute("position",{x:x,y:y-4.9,z:z});
+    baseboard.setAttribute("width", "4.1");
+    baseboard.setAttribute("height", "0.2");
+    baseboard.setAttribute("depth", "4.1");
+    baseboard.setAttribute("position", "0 -4.9 0");
+    baseboard.setAttribute("color", "gray");
+    
     this.obj.append(wall)
     this.obj.append(baseboard)
     scene.append(this.obj);
