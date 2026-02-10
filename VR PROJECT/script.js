@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded",function() {
     let cols = row.split("");
     for(let c = 0; c < cols.length; c++){
       if(cols[c] == "x"){
-        new Wall(4*c,5,4*r);
+        new Wall(4*c,0,4*r);
       }
       
       
